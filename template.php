@@ -12,7 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<? if(! empty($arResult['ITEMS'])): ?> 
+<? if (! empty($arResult['ITEMS'])): ?> 
 <div id="barba-wrapper">
     <div class="article-list">
     <? foreach ($arResult['ITEMS'] as $arItem): ?>
