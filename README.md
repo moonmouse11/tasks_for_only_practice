@@ -1,5 +1,3 @@
-# tasks_for_only_practice
-
-## Without CSS and other colors
+#### tasks_for_only_practice
 
 Waiting for issues
