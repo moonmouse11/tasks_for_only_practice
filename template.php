@@ -20,20 +20,18 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
 	<?
 	foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion)
 	{
-		if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden')
-		{
-			echo $arQuestion["HTML_CODE"];
-		}
-		else
-		{
+		if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden'){
+			echo $arQuestion["HTML_CODE"];}
+		else{
 
-        switch ($arQuestion['STRUCTURE'][0]['ID']) :
-            case 26: ?>
+        switch ($FIELD_SID) :
+            case "SIMPLE_QUESTION_269": ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_name">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
-                        <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_name" 
+                            <? if ($arQuestion["REQUIRED"] == "Y") echo $arResult["REQUIRED_SIGN"]; ?>
+                        </div>
+                        <input class="input__input" type="<?=$arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_name" 
 			    name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"  
                             value="" require="">
                         <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
@@ -41,12 +39,13 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
                  </div>
                 <?
                 break;
-            case 28: ?>
+            case "SIMPLE_QUESTION_457": ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_email">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
-                        <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_email"
+                            <? if ($arQuestion["REQUIRED"] == "Y") echo $arResult["REQUIRED_SIGN"]; ?>
+                        </div>
+                        <input class="input__input" type="<?=$arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_email"
 			    name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
                             value="" require="">
                         <div class="input__notification">Неверный формат почты</div>
@@ -54,12 +53,13 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
                 </div>
             <?
                 break;
-            case 27: ?>
+            case "SIMPLE_QUESTION_258": ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_company">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
-                        <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_name"
+                            <? if ($arQuestion["REQUIRED"] == "Y") echo $arResult["REQUIRED_SIGN"]; ?>
+                        </div>
+                        <input class="input__input" type="<?=$arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_name"
 			    name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
                             value="" require="">
                         <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
@@ -67,12 +67,13 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
                 </div>
                 <?
                 break;
-            case 29: ?>
+            case "SIMPLE_QUESTION_434": ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_phone">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
-                        <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_phone"
+                            <? if ($arQuestion["REQUIRED"] == "Y") echo $arResult["REQUIRED_SIGN"];?>
+                        </div>
+                        <input class="input__input" type="<?=$arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_phone"
                             data-inputmask="'mask': '+79999999999', 'clearIncomplete': 'true'" maxlength="12" x-autocompletetype="phone-full"
 			    name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
                             value="" required="">
@@ -81,13 +82,14 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
             </div>
                 <?
                 break;
-            case 30: ?>
+            case "SIMPLE_QUESTION_210": ?>
                 <div class="contact-form__form-message">
                     <div class="input">
                         <label class="input__label" for="medicine_message">
                             <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
-                            <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                            <textarea class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_message"
+                                <? if ($arQuestion["REQUIRED"] == "Y") echo $arResult["REQUIRED_SIGN"];?>
+                            </div>
+                            <textarea class="input__input" type="<?=$arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_message"
                                 name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
                                 value=""></textarea>
                             <div class="input__notification"></div>
@@ -99,8 +101,8 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
             default:
                 break;
             endswitch;
-        }
-	} //endwhile
+            }
+	}
 	?>
         <div class="contact-form__bottom">
             <div class="contact-form__bottom-policy">Нажимая &laquo;Отправить&raquo;, Вы&nbsp;подтверждаете, что
