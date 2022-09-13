@@ -28,59 +28,68 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
 		{
 
         switch ($arQuestion['STRUCTURE'][0]['ID']) :
-            case 1: ?>
+            case 26: ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_name">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
                         <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="text" id="medicine_name" required=""<?=$arQuestion["HTML_CODE"]?>
+                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" 
+                            id="medicine_name" name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"  
+                            value="" require="">
                         <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
                     </label>
                  </div>
                 <?
                 break;
-            case 2: ?>
+            case 28: ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_email">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
                         <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="email" id="medicine_email" required="" <?=$arQuestion["HTML_CODE"]?>
+                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" 
+                            id="medicine_email" name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"  
+                            value="" require="">
                         <div class="input__notification">Неверный формат почты</div>
                     </label>
                 </div>
             <?
                 break;
-            case 3: ?>
+            case 27: ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_company">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
                         <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="text" id="medicine_company" required="" <?=$arQuestion["HTML_CODE"]?>
+                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>"
+                        id="medicine_name" name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"  
+                            value="" require="">
                         <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
                     </label>
                 </div>
                 <?
                 break;
-            case 4: ?>
+            case 29: ?>
                 <div class="input contact-form__input">
                     <label class="input__label" for="medicine_phone">
                         <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
                         <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                        <input class="input__input" type="tel" id="medicine_phone"
-                       data-inputmask="'mask': '+79999999999', 'clearIncomplete': 'true'" maxlength="12"
-                       x-autocompletetype="phone-full" required="" <?=$arQuestion["HTML_CODE"]?>
+                        <input class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>" id="medicine_phone"
+                            data-inputmask="'mask': '+79999999999', 'clearIncomplete': 'true'" maxlength="12"
+                            x-autocompletetype="phone-full" name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
+                            value="" required=""
                    </label>
                 </div>
-                </div>
+            </div>
                 <?
                 break;
-            case 5: ?>
+            case 30: ?>
                 <div class="contact-form__form-message">
                     <div class="input">
                         <label class="input__label" for="medicine_message">
                             <div class="input__label-text"><?=$arQuestion["CAPTION"]?>
                             <?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></div>
-                            <textarea class="input__input" type="text" id="medicine_message"></textarea>
+                            <textarea class="input__input" type="<?= $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] ?>"
+                                id="medicine_message" name="<?= "form_" . $arQuestion["STRUCTURE"]["0"]["FIELD_TYPE"] . "_" . $arQuestion["STRUCTURE"]["0"]["QUESTION_ID"] ?>"
+                                value=""></textarea>
                             <div class="input__notification"></div>
                         </label>
                     </div>
@@ -105,7 +114,7 @@ if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?end
             </button>
         </div>
     </form>
-
+</div>
 <?=$arResult["FORM_FOOTER"]?>
 <?
-} //endif (isFormNote)
+} 
